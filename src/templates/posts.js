@@ -20,6 +20,7 @@ const postSx = {
 const Post = ({ pageContext }) => {
   const posts = pageContext.group.map(post => {
     const title = post.data.title.text
+    const recipe = post.data.body.length > 0
     const slug = `/posts/${slugify(title)}`
     const tags = post.tags.join(", ")
     const date = new Date(post.first_publication_date).toLocaleDateString()
@@ -39,12 +40,16 @@ const Post = ({ pageContext }) => {
               Read More
             </Link>
           </Button>
-          <Text variant="label" sx={{ fontSize: 0, mx: 3 }}>
-            OR
-          </Text>
-          <Link to={`${slug}#recipe`} sx={{ variant: "links.underline" }}>
-            Skip To Recipe
-          </Link>
+          {recipe && (
+            <>
+              <Text variant="label" sx={{ fontSize: 0, mx: 3 }}>
+                OR
+              </Text>
+              <Link to={`${slug}#recipe`} sx={{ variant: "links.underline" }}>
+                Skip To Recipe
+              </Link>
+            </>
+          )}
         </Flex>
       </Box>
     )

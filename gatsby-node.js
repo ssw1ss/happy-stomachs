@@ -23,6 +23,11 @@ exports.createPages = async ({ actions, graphql }) => {
           first_publication_date
           tags
           data {
+            body {
+              ... on PrismicPostBodyRecipe {
+                id
+              }
+            }
             content {
               text
             }
