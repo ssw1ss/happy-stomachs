@@ -1,0 +1,95 @@
+{
+  "Main": {
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Title"
+      }
+    },
+    "content": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+        "allowTargetBlank": true,
+        "label": "Content"
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {
+          "recipe": []
+        },
+        "choices": {
+          "recipe": {
+            "type": "Slice",
+            "fieldset": "Recipe",
+            "description": "If the post has a recipe add it here",
+            "icon": "chrome_reader_mode",
+            "display": "list",
+            "non-repeat": {
+              "recipe_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading2",
+                  "label": "Recipe Title",
+                  "placeholder": "Name of the recipe"
+                }
+              },
+              "serves": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "paragraph",
+                  "allowTargetBlank": true,
+                  "label": "Serves",
+                  "placeholder": "How many people will this recipe serve?"
+                }
+              },
+              "prep_time": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "paragraph",
+                  "allowTargetBlank": true,
+                  "label": "Prep Time"
+                }
+              },
+              "cook_time": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "paragraph",
+                  "allowTargetBlank": true,
+                  "label": "Cook Time"
+                }
+              },
+              "total_time": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "paragraph",
+                  "allowTargetBlank": true,
+                  "label": "Total Time"
+                }
+              },
+              "ingredients": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "paragraph, strong, em, list-item",
+                  "label": "Ingredients"
+                }
+              },
+              "instructions": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                  "label": "Instructions"
+                }
+              }
+            },
+            "repeat": {}
+          }
+        }
+      }
+    }
+  }
+}
