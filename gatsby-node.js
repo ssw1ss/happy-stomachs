@@ -38,7 +38,7 @@ exports.createPages = async ({ actions, graphql }) => {
     edges: data.allPrismicPost.nodes,
     createPage: createPage,
     pageTemplate: "src/templates/posts.js",
-    pageLength: 2, // This is optional and defaults to 10 if not used
+    pageLength: 5, // This is optional and defaults to 10 if not used
     pathPrefix: "",
     buildPath: (index, pathPrefix) => (index < 1 ? `/` : `/page-${index}`),
   })
