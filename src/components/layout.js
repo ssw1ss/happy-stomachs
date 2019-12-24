@@ -24,7 +24,7 @@ const Layout = ({ children }) => {
       <Global styles={globalCSS} />
       <Styled.root>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <Box>{children}</Box>
+        <Box sx={{ mb: 6 }}>{children}</Box>
       </Styled.root>
     </>
   )

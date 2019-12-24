@@ -11,7 +11,7 @@ import Section from "../components/Section"
 
 const postSx = {
   py: 5,
-  borderBottom: theme => `1px solid ${theme.colors.lightGreen}`,
+  borderBottom: theme => `3px solid ${theme.colors.lightGreen}`,
   "&:last-child": {
     borderBottom: "none",
   },
