@@ -57,7 +57,7 @@ const Post = ({ pageContext }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <Section>{posts}</Section>
+      <Section pb={6}>{posts}</Section>
     </Layout>
   )
 }
