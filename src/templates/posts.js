@@ -33,7 +33,7 @@ const Post = ({ pageContext }) => {
           as="p"
           sx={{ fontSize: "1.1rem" }}
           dangerouslySetInnerHTML={{
-            __html: `${post.data.content.text.slice(0, 500)} ...`,
+            __html: `${post.data.content.text.slice(0, 450)} ...`,
           }}
         />
         <Flex sx={{ alignItems: "center", mt: 4 }}>
