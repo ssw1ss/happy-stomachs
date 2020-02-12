@@ -2,6 +2,7 @@
 import { jsx } from "theme-ui"
 import React from "react"
 import slugify from "@sindresorhus/slugify"
+import dateFormat from "dateformat"
 
 import { Button, Box, Flex, Link, Text } from "ui"
 import Layout from "../components/layout"
@@ -23,7 +24,8 @@ const Post = ({ pageContext }) => {
     const recipe = post.data.body.length > 0
     const slug = `/posts/${slugify(title)}`
     const tags = post.tags.join(", ")
-    const date = new Date(post.first_publication_date).toLocaleDateString()
+    let date = new Date(post.first_publication_date)
+    date = dateFormat(date, "mmm dS, yyyy")
     return (
       <Box key={post.id} sx={postSx}>
         <PostHead title={title} slug={slug} tags={tags} date={date} />
