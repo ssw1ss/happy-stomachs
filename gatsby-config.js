@@ -34,7 +34,7 @@ module.exports = {
     {
       resolve: `gatsby-source-prismic`,
       options: {
-        repositoryName: `happy-stomachs`,
+        repositoryName: `happystomachs`,
         accessToken: `${process.env.API_KEY}`,
         linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
         schemas: { post: require("./src/prismicSchemas/post.json") },
