@@ -25,8 +25,8 @@ exports.createPages = async ({ actions, graphql }) => {
             tags
             data {
               feature_image {
-                fluid(maxWidth: 1000, maxHeight: 800) {
-                  ...GatsbyPrismicImageFluid
+                fluid(maxWidth: 800, maxHeight: 500) {
+                  ...GatsbyImageSharpFluid
                 }
               }
               body {

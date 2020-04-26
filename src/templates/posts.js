@@ -29,7 +29,13 @@ const Post = ({ pageContext }) => {
     date = dateFormat(date, "mmm dS, yyyy")
     return (
       <Box key={post.id} sx={postSx}>
-        <PostHead title={title} slug={slug} tags={tags} date={date} />
+        <PostHead
+          title={title}
+          slug={slug}
+          tags={tags}
+          date={date}
+          img={post.data.feature_image}
+        />
         <Text
           as="p"
           sx={{ fontSize: "1.1rem" }}

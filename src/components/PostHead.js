@@ -12,6 +12,7 @@ const PostHead = ({ date, slug, tags, title, img }) => {
       🏷{tags}
     </Text>
   ) : null
+  console.log("IMAGE: ", img)
   return (
     <>
       <Heading as="h1" variant="h1">
