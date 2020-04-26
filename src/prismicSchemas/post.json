@@ -7,6 +7,14 @@
         "label": "Title"
       }
     },
+    "feature_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Feature Image"
+      }
+    },
     "content": {
       "type": "StructuredText",
       "config": {

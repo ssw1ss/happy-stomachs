@@ -35,6 +35,7 @@ const post = ({ data }) => {
   ).toLocaleDateString()
   const post = data.prismicPost.data
   const title = post.title.text
+  const img = post.hasOwnProperty("feature_image") ? post.feature_image : null
   let recipe = false
   if (post.body.length > 0) {
     recipe = post.body[0].primary
@@ -43,7 +44,7 @@ const post = ({ data }) => {
     <Layout>
       <Section>
         <Box sx={postSx}>
-          <PostHead title={title} tags={tags} date={date} />
+          <PostHead title={title} tags={tags} date={date} img={img} />
           <Text
             sx={postContentSx}
             dangerouslySetInnerHTML={{ __html: post.content.html }}
@@ -58,7 +59,7 @@ const post = ({ data }) => {
 export default post
 
 export const query = graphql`
-  query($id: String!) {
+  query Post($id: String!) {
     prismicPost(id: { eq: $id }) {
       first_publication_date
       tags
@@ -68,6 +69,11 @@ export const query = graphql`
         }
         title {
           text
+        }
+        feature_image {
+          fluid(maxHeight: 10, maxWidth: 10) {
+            ...GatsbyPrismicImageFluid
+          }
         }
         body {
           ... on PrismicPostBodyRecipe {

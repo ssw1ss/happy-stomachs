@@ -40,5 +40,6 @@ module.exports = {
         schemas: { post: require("./src/prismicSchemas/post.json") },
       },
     },
+    `gatsby-plugin-theme-ui`,
   ],
 }

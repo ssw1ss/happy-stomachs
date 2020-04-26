@@ -24,6 +24,7 @@ const Post = ({ pageContext }) => {
     const recipe = post.data.body.length > 0
     const slug = `/posts/${slugify(title)}`
     const tags = post.tags.join(", ")
+    console.log("img: ", post.data)
     let date = new Date(post.first_publication_date)
     date = dateFormat(date, "mmm dS, yyyy")
     return (
@@ -48,7 +49,8 @@ const Post = ({ pageContext }) => {
                 OR
               </Text>
               <Link to={`${slug}#recipe`} sx={{ variant: "links.underline" }}>
-                Skip To Recipe
+                Skip To Recipe (
+                {recipe && post.data.body[0].primary.recipe_title.text})
               </Link>
             </>
           )}
@@ -65,23 +67,3 @@ const Post = ({ pageContext }) => {
 }
 
 export default Post
-
-// export const blogListQuery = graphql`
-//   query blogListQuery(skip: $skip, limit: ) {
-//     allPrismicPost {
-//       nodes {
-//         id
-//         first_publication_date
-//         tags
-//         data {
-//           content {
-//             text
-//           }
-//           title {
-//             text
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
