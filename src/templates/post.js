@@ -30,9 +30,7 @@ const postContentSx = {
 
 const post = ({ data }) => {
   const tags = data.prismicPost.tags.join(", ")
-  const date = new Date(
-    data.prismicPost.first_publication_date
-  ).toLocaleDateString()
+  const date = data.prismicPost.first_publication_date
   const post = data.prismicPost.data
   const title = post.title.text
   const img = post.feature_image
@@ -45,7 +43,7 @@ const post = ({ data }) => {
     <Layout>
       <Section>
         <Box sx={postSx}>
-          <PostHead title={title} tags={tags} date={date} />
+          <PostHead title={title} tags={tags} date={date} img={img} />
           <Text
             sx={postContentSx}
             dangerouslySetInnerHTML={{ __html: post.content.html }}
@@ -72,8 +70,14 @@ export const query = graphql`
           text
         }
         feature_image {
-          fluid(maxWidth: 800, maxHeight: 500) {
-            ...GatsbyImageSharpFluid
+          fluid(maxWidth: 800) {
+            base64
+            aspectRatio
+            src
+            srcSet
+            srcWebp
+            srcSetWebp
+            sizes
           }
         }
         body {

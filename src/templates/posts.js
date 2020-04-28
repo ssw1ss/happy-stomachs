@@ -2,7 +2,6 @@
 import { jsx } from "theme-ui"
 import React from "react"
 import slugify from "@sindresorhus/slugify"
-import dateFormat from "dateformat"
 
 import { Button, Box, Flex, Link, Text } from "ui"
 import Layout from "../components/layout"
@@ -25,8 +24,7 @@ const Post = ({ pageContext }) => {
     const slug = `/posts/${slugify(title)}`
     const tags = post.tags.join(", ")
     console.log("img: ", post.data)
-    let date = new Date(post.first_publication_date)
-    date = dateFormat(date, "mmm dS, yyyy")
+    let date = post.first_publication_date
     return (
       <Box key={post.id} sx={postSx}>
         <PostHead

@@ -132,11 +132,10 @@ export default {
     h4: { ...heading, fontSize: 1 },
     h5: { ...heading, fontSize: 0 },
     label: {
-      fontSize: 0,
-      textTransform: "uppercase",
-      letterSpacing: "1px",
+      fontSize: 1,
+      // textTransform: "uppercase",
       color: "lighterGray",
-      fontWeight: "medium",
+      // fontWeight: "medium",
     },
   },
 }

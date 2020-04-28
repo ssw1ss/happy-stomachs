@@ -1,5 +1,5 @@
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env`,
 })
 module.exports = {
   siteMetadata: {
@@ -8,7 +8,6 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
-    `gatsby-plugin-theme-ui`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -38,7 +37,8 @@ module.exports = {
         schemas: { post: require("./src/prismicSchemas/post.json") },
       },
     },
-    `gatsby-transformer-sharp`,
+    `gatsby-plugin-theme-ui`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
   ],
 }

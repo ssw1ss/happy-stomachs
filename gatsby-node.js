@@ -25,8 +25,14 @@ exports.createPages = async ({ actions, graphql }) => {
             tags
             data {
               feature_image {
-                fluid(maxWidth: 800, maxHeight: 500) {
-                  ...GatsbyImageSharpFluid
+                fluid(maxWidth: 800) {
+                  base64
+                  aspectRatio
+                  src
+                  srcSet
+                  srcWebp
+                  srcSetWebp
+                  sizes
                 }
               }
               body {
